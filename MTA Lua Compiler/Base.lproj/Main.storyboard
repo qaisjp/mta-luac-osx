@@ -689,71 +689,9 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="onAddItem:" target="XfG-lQ-9wD" id="WVH-Yk-ypK"/>
+                                    <action selector="onBrowseClick:" target="XfG-lQ-9wD" id="nxR-Sx-gwT"/>
                                 </connections>
                             </button>
-                            <scrollView identifier="fileScrollView" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2d-Pr-rvc">
-                                <rect key="frame" x="20" y="20" width="260" height="218"/>
-                                <clipView key="contentView" ambiguous="YES" misplaced="YES" id="mcW-pE-TDJ">
-                                    <rect key="frame" x="1" y="0.0" width="238" height="134"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="x3Z-x8-bll" viewBased="YES" id="kyE-dJ-dMj">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <size key="intercellSpacing" width="3" height="2"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
-                                            <tableColumns>
-                                                <tableColumn width="152.4296875" minWidth="40" maxWidth="1000" id="TDd-NT-oaL">
-                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Filename">
-                                                        <font key="font" metaFont="smallSystem"/>
-                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
-                                                    </tableHeaderCell>
-                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="oqu-e5-bZ4">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
-                                                    <prototypeCellViews>
-                                                        <tableCellView id="Qgw-VV-vMp">
-                                                            <rect key="frame" x="1" y="1" width="152" height="17"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                            <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TXa-Cc-A2B">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="foe-bH-87y">
-                                                                        <font key="font" metaFont="system"/>
-                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                                    </textFieldCell>
-                                                                </textField>
-                                                            </subviews>
-                                                            <connections>
-                                                                <outlet property="textField" destination="TXa-Cc-A2B" id="trt-r3-WPz"/>
-                                                            </connections>
-                                                        </tableCellView>
-                                                    </prototypeCellViews>
-                                                </tableColumn>
-                                            </tableColumns>
-                                        </tableView>
-                                    </subviews>
-                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="6Ud-Nk-HCA">
-                                    <rect key="frame" x="1" y="119" width="223" height="15"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="daQ-fH-RoZ">
-                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <tableHeaderView key="headerView" id="x3Z-x8-bll">
-                                    <rect key="frame" x="0.0" y="0.0" width="238" height="17"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableHeaderView>
-                            </scrollView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mV4-uB-75V">
                                 <rect key="frame" x="73" y="245" width="63" height="23"/>
                                 <buttonCell key="cell" type="smallSquare" title="Remove" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FD9-oa-XZl">
@@ -768,24 +706,19 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="onClosePressed:" target="XfG-lQ-9wD" id="cf7-4u-LRM"/>
+                                    <action selector="onClosePressed:" target="XfG-lQ-9wD" id="fLq-d2-Nyp"/>
                                 </connections>
                             </button>
                         </subviews>
                     </view>
-                    <connections>
-                        <outlet property="fileScrollView" destination="U2d-Pr-rvc" id="qek-fB-EJ4"/>
-                        <outlet property="fileTableView" destination="kyE-dJ-dMj" id="86h-UL-WzG"/>
-                        <outlet property="scrollView" destination="U2d-Pr-rvc" id="h9p-6S-Hvb"/>
-                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="735" y="557"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="3LF-q7-tLn">
             <objects>
-                <viewController id="Yfx-Y5-jzm" sceneMemberID="viewController">
+                <viewController id="Yfx-Y5-jzm" customClass="MTAMainViewController" customModule="MTA_Lua_Compiler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="9kh-zz-rmz">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="133"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -815,6 +748,9 @@
                                         <segment label="Compile" tag="1"/>
                                     </segments>
                                 </segmentedCell>
+                                <connections>
+                                    <action selector="onCompilePress:" target="Yfx-Y5-jzm" id="5nc-Oh-bYt"/>
+                                </connections>
                             </segmentedControl>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p1W-Ws-Bqi">
                                 <rect key="frame" x="18" y="106" width="86" height="18"/>
@@ -832,6 +768,9 @@
                             </progressIndicator>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="obfuscateCheckbox" destination="p1W-Ws-Bqi" id="xHj-cl-oWo"/>
+                    </connections>
                 </viewController>
                 <customObject id="ahI-7b-Bax" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,25 +10,22 @@ import Cocoa
 
 class FileManagerViewController: NSViewController {
     
-    weak var filePath:NSURL!
+    var urls: Array<NSURL>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-
-    }
-
-    override var representedObject: AnyObject? {
-        didSet {
-        // Update the view, if already loaded.
-        }
     }
 
     @IBAction func onClosePressed(sender: AnyObject) {
         self.dismissController(self)
+
+        if (urls != nil) {
+            (self.representedObject as MTAMainViewController).parameters = urls!
+        }
     }
+    
     @IBOutlet weak var fileTableView: NSTableView!
     @IBAction func onBrowseClick(sender: AnyObject) {
         // Create the File Open Dialog class.
@@ -43,11 +40,11 @@ class FileManagerViewController: NSViewController {
         // Display the dialog.  If the OK button was pressed, process the path
         var buttonPressed:NSInteger = panel.runModal();
         if ( buttonPressed == NSOKButton ) {
-            var url:NSURL = panel.URLs[0] as NSURL;
-            filePath = url
+            self.urls = panel.URLs as? Array<NSURL>
         }
         
     }
 
+    
 }
 
