@@ -19,13 +19,12 @@ class MTAFileCompiler: NSObject {
         
         var parameters: [String: String] = [
             "compile": "1",
-            "obfuscate": toString(obfuscate),
-            "debug": toString(debug)
+            "obfuscate": obfuscate ? "1" : "0",
+            "debug": debug ? "1" : "0"
         ]
         
         
         var test = Alamofire.ParameterEncoding.URL.encode(LUAC_MTASA_COM, parameters: parameters)
-        
         
         var upload = Alamofire.upload(.POST, test.0, file)
             .progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
@@ -33,11 +32,24 @@ class MTAFileCompiler: NSObject {
         }
 
         .response { (request,response,d,error) in
+            if (error != nil) {
+                println(error)
+                return
+            }
+            
             var data:NSData = d as NSData
             var str = NSString(data:data, encoding:NSUTF8StringEncoding)
             
+            if (str != nil) {
+                // Error! str is not null if plain text is returned
+                println("Error: " + str!)
+                return
+            }
+            
+            // Time to save to file
             println(data)
-            println(str)
+            data.writeToURL(file.URLByAppendingPathExtension("luac"), atomically: true)
+            
         }
     }
 }
