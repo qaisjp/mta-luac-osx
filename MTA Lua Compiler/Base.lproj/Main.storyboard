@@ -653,10 +653,10 @@
                 <windowController id="B8D-0N-5wS" customClass="MTAWindowController" customModule="MTA_Lua_Compiler" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="MTA Lua Compiler" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="MTALuaCompiler" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
-                        <rect key="contentRect" x="561" y="369" width="300" height="133"/>
+                        <rect key="contentRect" x="561" y="369" width="300" height="157"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <value key="minSize" type="size" width="300" height="133"/>
-                        <value key="maxSize" type="size" width="300" height="133"/>
+                        <value key="minSize" type="size" width="300" height="157"/>
+                        <value key="maxSize" type="size" width="300" height="157"/>
                     </window>
                     <connections>
                         <segue destination="Yfx-Y5-jzm" kind="relationship" relationship="window.shadowedContentViewController" id="45J-BI-gom"/>
@@ -720,9 +720,29 @@
             <objects>
                 <viewController id="Yfx-Y5-jzm" customClass="MTAMainViewController" customModule="MTA_Lua_Compiler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="9kh-zz-rmz">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="133"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="157"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="DCX-Y4-0wv">
+                                <rect key="frame" x="0.0" y="121" width="300" height="5"/>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <font key="titleFont" metaFont="system"/>
+                            </box>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p1W-Ws-Bqi">
+                                <rect key="frame" x="18" y="130" width="86" height="18"/>
+                                <buttonCell key="cell" type="check" title="Obfuscate" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ZEy-zf-DGS">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <levelIndicator verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JYK-sv-aAm">
+                                <rect key="frame" x="52" y="89" width="228" height="18"/>
+                                <levelIndicatorCell key="cell" enabled="NO" alignment="left" doubleValue="2" maxValue="8" id="dmN-yl-aXA"/>
+                            </levelIndicator>
+                            <progressIndicator fixedFrame="YES" maxValue="100" doubleValue="20" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="j1c-Q6-JMi">
+                                <rect key="frame" x="12" y="83" width="32" height="32"/>
+                            </progressIndicator>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aa3-Ix-h5n">
                                 <rect key="frame" x="14" y="13" width="120" height="32"/>
                                 <buttonCell key="cell" type="push" title="File Manager" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Hcb-eO-Bi4">
@@ -733,48 +753,44 @@
                                     <segue destination="XfG-lQ-9wD" kind="sheet" id="9Se-x3-WLV"/>
                                 </connections>
                             </button>
-                            <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="DCX-Y4-0wv">
-                                <rect key="frame" x="0.0" y="97" width="300" height="5"/>
+                            <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="7Yt-5u-Htc">
+                                <rect key="frame" x="0.0" y="72" width="300" height="4"/>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <font key="titleFont" metaFont="system"/>
                             </box>
-                            <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="18k-xv-d1F">
-                                <rect key="frame" x="141" y="18" width="141" height="24"/>
-                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="momentary" id="Fyf-AD-wb5">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U8B-ci-sTK">
+                                <rect key="frame" x="-2" y="49" width="304" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Please select your files using the file manager" id="kgz-rv-4VW">
                                     <font key="font" metaFont="system"/>
-                                    <segments>
-                                        <segment label="Cancel"/>
-                                        <segment label="Compile" tag="1"/>
-                                    </segments>
-                                </segmentedCell>
-                                <connections>
-                                    <action selector="onCompilePress:" target="Yfx-Y5-jzm" id="5nc-Oh-bYt"/>
-                                </connections>
-                            </segmentedControl>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p1W-Ws-Bqi">
-                                <rect key="frame" x="18" y="106" width="86" height="18"/>
-                                <buttonCell key="cell" type="check" title="Obfuscate" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ZEy-zf-DGS">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OfQ-Su-dJR">
+                                <rect key="frame" x="166" y="13" width="120" height="32"/>
+                                <buttonCell key="cell" type="push" title="Compile files" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AFR-7o-XdK">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="onButtonPress:" target="Yfx-Y5-jzm" id="RBv-Ix-Ex5"/>
+                                </connections>
                             </button>
-                            <levelIndicator verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nfh-u7-iqR">
-                                <rect key="frame" x="20" y="73" width="260" height="18"/>
-                                <levelIndicatorCell key="cell" alignment="left" doubleValue="2" maxValue="8" id="2Nd-sg-ThX"/>
-                            </levelIndicator>
-                            <progressIndicator fixedFrame="YES" maxValue="100" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="vsQ-M6-Tfs">
-                                <rect key="frame" x="80" y="48" width="140" height="20"/>
-                            </progressIndicator>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="compileBtn" destination="OfQ-Su-dJR" id="FLZ-r9-Ore"/>
+                        <outlet property="fileManagerButton" destination="aa3-Ix-h5n" id="GfI-qM-NtC"/>
+                        <outlet property="fileProgress" destination="JYK-sv-aAm" id="T6w-kX-n8K"/>
+                        <outlet property="messageField" destination="U8B-ci-sTK" id="1uN-8J-hlh"/>
                         <outlet property="obfuscateCheckbox" destination="p1W-Ws-Bqi" id="xHj-cl-oWo"/>
+                        <outlet property="uploadProgress" destination="j1c-Q6-JMi" id="WuI-AE-SHL"/>
                     </connections>
                 </viewController>
                 <customObject id="ahI-7b-Bax" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="388" y="473.5"/>
+            <point key="canvasLocation" x="388" y="485.5"/>
         </scene>
     </scenes>
 </document>
