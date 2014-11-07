@@ -71,6 +71,7 @@ class MTAMainViewController: NSViewController {
     func onCompileFinish(reason: MTAFileCompiler.CompleteReason, error: String?) {
         compileBtn.title = "Compile files"
         fileManagerButton.enabled = true
+        uploadProgress.doubleValue = 0
         
         switch reason {
         case .Success:

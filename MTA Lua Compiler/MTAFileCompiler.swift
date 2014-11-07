@@ -41,17 +41,20 @@ class MTAFileCompiler: NSObject {
                     println(error)
                     if (callback != nil) {
                         println("Output")
-                        callback!(.CompileError, error?.description)
+                        callback!(.SomeOtherError, nil)
                     }
                     return
                 }
                 
                 var data:NSData = d as NSData
-                var str = NSString(data:data, encoding:NSUTF8StringEncoding)
                 
+                var str = NSString(data:data, encoding:NSUTF8StringEncoding)
                 if (str != nil) {
                     // Error! str is not null if plain text is returned
                     println("Error: " + str!)
+                    if (callback != nil) {
+                        callback!(.CompileError, str! + " (\(file.lastPathComponent))" )
+                    }
                     return
                 }
                 
