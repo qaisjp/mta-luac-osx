@@ -1,5 +1,4 @@
  I no longer work with OS X (or own a Mac device) so this project is in hiatus for an indefinite period of time, sorry!
- ===============================================
  
  MTA Lua Compiler - OS X
 ========================
